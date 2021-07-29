@@ -1,11 +1,13 @@
 package com.lordsam.networkplayground
 
+import android.app.Activity
 import android.telephony.PhoneStateListener
 import android.telephony.SignalStrength
 import android.util.Log
+import android.widget.TextView
 
 
-class MyPhoneStateListener : PhoneStateListener() {
+class MyPhoneStateListener(private val ctx :MainActivity) : PhoneStateListener() {
 
     private var signalStrengthValue = 0
 
@@ -17,5 +19,6 @@ class MyPhoneStateListener : PhoneStateListener() {
             signalStrength.cdmaDbm
         }
         Log.i("strength", signalStrengthValue.toString())
+        ctx.findViewById<TextView>(R.id.tvSS).text = "Signal Strength :$signalStrengthValue"
     }
 }

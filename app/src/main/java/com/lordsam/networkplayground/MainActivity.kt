@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        psListener = MyPhoneStateListener()
+        psListener = MyPhoneStateListener(this)
         telephonyManager = getSystemService(TELEPHONY_SERVICE) as TelephonyManager
         telephonyManager!!.listen(psListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS)
     }
