@@ -1,6 +1,5 @@
 package com.lordsam.networkplayground
 
-import android.app.Activity
 import android.telephony.PhoneStateListener
 import android.telephony.SignalStrength
 import android.util.Log
